@@ -1,0 +1,10 @@
+#!/usr/bin/env php
+<?php
+require_once('vendor/autoload.php');
+use SonarqubeTidy\SonarqubeTidyCommand;
+use Symfony\Component\Console\Application;
+
+$sqtCommand = new SonarqubeTidyCommand();
+$console = new Application();
+$console->add($sqtCommand);
+$console->run();

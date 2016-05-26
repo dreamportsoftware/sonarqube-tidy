@@ -1,0 +1,21 @@
+{
+  "require": {
+    "php": ">=5.6",
+    "guzzlehttp/guzzle": "^6.1",
+    "symfony/console": "3.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "SonarqubeTidy\\": "src/"
+    }
+  },
+  "config": {
+    "bin-dir": "bin",
+    "preferred-install": "dist"
+  },
+  "scripts": {
+    "post-root-package-install": [
+      "php -r \"copy('config/config.ini-example', 'config/config.ini');\""
+    ]
+  }
+}

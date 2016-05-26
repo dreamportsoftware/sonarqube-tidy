@@ -1,0 +1,7 @@
+bamboo_url = http://<bambooURL>
+sonarqube_url = http://<sonarqubeURL>
+
+[ignore-branches]
+; One bamboo branch per line that you don't ever want to delete
+branch[] = master
+branch[] = develop
