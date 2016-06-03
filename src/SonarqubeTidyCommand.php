@@ -114,12 +114,13 @@ class SonarqubeTidyCommand extends Command
 
         $username = $input->getOption('username');
         if (empty($username)) {
-            $question = new Question('What is your username?');
+            $question = new Question('<question>What is your username?</question>');
             $question->setValidator(
                 function ($value) {
                     if (empty($value)) {
                         throw new Exception('The username can not be empty.');
                     }
+                    return $value;
                 }
             );
             $question->setMaxAttempts(2);
@@ -133,13 +134,14 @@ class SonarqubeTidyCommand extends Command
         }
 
         if (empty($password)) {
-            $question = new Question('What is your password?');
+            $question = new Question('<question>What is your password?</question>');
             $question->setHidden(true);
             $question->setValidator(
                 function ($value) {
                     if (empty($value)) {
                         throw new Exception('The password can not be empty.');
                     }
+                    return $value;
                 }
             );
             $question->setMaxAttempts(2);
