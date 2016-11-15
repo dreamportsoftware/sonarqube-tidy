@@ -15,7 +15,7 @@ class Sonarqube extends Api
     {
         $proj = $this->client->request(
             'GET',
-            $this->config['sonarqube_url'].'/api/projects/',
+            $this->config['sonarqube_url'].'/api/projects/index',
             [
                 'auth' => [$this->username, $this->password],
             ]
